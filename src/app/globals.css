@@ -2,6 +2,23 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+@theme {
+  /* Light Mode */
+
+  --white-background: #f8f9fa;
+  --white-text: #212529;
+  --white-primary: #007bff;
+  --white-secondary: #6c757d;
+  --white-accent: #17a2b8;
+  --white-border: #dee2e6;
+
+  --dark-background: #121212;
+  --dark-text: #e0e0e0;
+  --dark-primary: #1e90ff;
+  --dark-secondary: #2d2d2d;
+  --dark-accent: #64ffda;
+  --dark-border: #333;
+}
 
 :root {
   --background: #ffffff;
