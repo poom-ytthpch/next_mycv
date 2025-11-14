@@ -23,6 +23,7 @@ import {
   SiTrpc,
   SiRedis,
   SiNginx,
+  SiAntdesign,
 } from "react-icons/si";
 
 const size = 22;
@@ -45,12 +46,14 @@ const stackIcons: { [key: string]: JSX.Element } = {
   Grpc: <SiTrpc size={size} />,
   Redis: <SiRedis size={size} />,
   Nginx: <SiNginx size={size} />,
+  AntD: <SiAntdesign size={size} />,
 };
 
 const projects = [
   {
     name: "Charging Management System (Inprogress)",
-    description: "Web dashboard for managing token rewards and reports.",
+    description:
+      "This project is in progress. project name DocCharge is a Charging Management System for electric vehicle (EV) charging stations.",
     github: "https://github.com/poom-ytthpch/doc-charge",
     private: false,
     stacks: [
@@ -68,7 +71,7 @@ const projects = [
       "Grpc",
       "Redis",
     ],
-    images: ["/images/yutthapichai.png", "/images/yutthapichai.png"],
+    images: ["/images/no-image.png"],
   },
   {
     name: "IoT Water Controller",
@@ -87,6 +90,7 @@ const projects = [
       "PM2",
       "Prisma",
       "Nginx",
+      "AntD",
     ],
     images: [
       "/images/matchchemical/01.png",
@@ -94,15 +98,25 @@ const projects = [
       "/images/matchchemical/03.png",
       "/images/matchchemical/04.png",
       "/images/matchchemical/05.png",
+      "/images/matchchemical/06.png",
+      "/images/matchchemical/07.png",
+      "/images/matchchemical/08.png",
+      "/images/matchchemical/09.png",
     ],
   },
   {
     name: "Book Library",
-    description: "Next.js landing page with CMS and animations.",
+    description:
+      "This project is a library management system. can manage book and borrow.",
     github: "https://github.com/poom-ytthpch/book-library",
     private: false,
-    stacks: ["NextJS", "NestJS"],
-    images: ["/images/yutthapichai.png"],
+    stacks: ["React", "NestJS", "NodeJS", "MySQL", "AntD", "Redis"],
+    images: [
+      "/images/booklibrary/01.png",
+      "/images/booklibrary/02.png",
+      "/images/booklibrary/03.png",
+      "/images/booklibrary/04.png",
+    ],
   },
 ];
 
