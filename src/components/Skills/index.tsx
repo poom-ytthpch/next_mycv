@@ -38,6 +38,7 @@ import {
   SiOracle,
   SiPostgresql,
   SiApachekafka,
+  SiNginx,
 } from "react-icons/si";
 
 const sectionVariants = {
@@ -178,6 +179,11 @@ export default function Skills() {
           name: "SonarQube",
           icon: <SiSonarqube color="#4E9BCD" size={size} />,
         },
+        {
+          name: "Nginx",
+          icon: <SiNginx color="#00979D" size={size}/>
+
+        }
       ],
     },
     {

@@ -22,25 +22,29 @@ import {
   SiApachekafka,
   SiTrpc,
   SiRedis,
+  SiNginx,
 } from "react-icons/si";
 
+const size = 22;
+
 const stackIcons: { [key: string]: JSX.Element } = {
-  NextJS: <SiNextdotjs size={22} />,
-  NodeJS: <SiNodedotjs size={22} />,
-  NestJS: <SiNestjs size={22} />,
-  MQTT: <SiMqtt size={22} />,
-  Tailwind: <SiTailwindcss size={22} />,
-  MySQL: <SiMysql size={22} />,
-  React: <SiReact size={22} />,
-  Arduino: <SiArduino size={22} />,
-  Platfromio: <SiPlatformio size={22} />,
-  MariaDB: <SiMariadb size={22} />,
-  Docker: <SiDocker size={22} />,
-  PM2: <SiPm2 size={22} />,
-  Prisma: <SiPrisma size={22} />,
-  Kafka: <SiApachekafka size={22} />,
-  Grpc: <SiTrpc size={22} />,
-  Redis: <SiRedis size={22} />,
+  NextJS: <SiNextdotjs size={size} />,
+  NodeJS: <SiNodedotjs size={size} />,
+  NestJS: <SiNestjs size={size} />,
+  MQTT: <SiMqtt size={size} />,
+  Tailwind: <SiTailwindcss size={size} />,
+  MySQL: <SiMysql size={size} />,
+  React: <SiReact size={size} />,
+  Arduino: <SiArduino size={size} />,
+  Platfromio: <SiPlatformio size={size} />,
+  MariaDB: <SiMariadb size={size} />,
+  Docker: <SiDocker size={size} />,
+  PM2: <SiPm2 size={size} />,
+  Prisma: <SiPrisma size={size} />,
+  Kafka: <SiApachekafka size={size} />,
+  Grpc: <SiTrpc size={size} />,
+  Redis: <SiRedis size={size} />,
+  Nginx: <SiNginx size={size} />,
 };
 
 const projects = [
@@ -82,6 +86,7 @@ const projects = [
       "Docker",
       "PM2",
       "Prisma",
+      "Nginx",
     ],
     images: [
       "/images/matchchemical/01.png",

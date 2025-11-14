@@ -42,6 +42,8 @@ export default function Home() {
 
   return (
     <div className="@container">
+      <link rel="icon" href="/yc_bg.png" />
+
       <div
         className={`bg-[light-dark(var(--white-background),var(--dark-background))] p-4 text-[light-dark(var(--white-text),var(--dark-text))] ${poppins.className} `}
       >
@@ -80,7 +82,7 @@ export default function Home() {
 
             <div className="mt-4 flex w-full justify-around">
               <a
-                href="/Yutthapichai-cv.pdf"
+                href="/Yutthapichai-CV.pdf"
                 target="_blank"
                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
               >
