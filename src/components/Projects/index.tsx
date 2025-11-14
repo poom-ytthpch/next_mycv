@@ -1,0 +1,210 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
+import { Lock } from "lucide-react";
+import { JSX, useState } from "react";
+import {
+  SiNextdotjs,
+  SiNodedotjs,
+  SiMqtt,
+  SiNestjs,
+  SiTailwindcss,
+  SiMysql,
+  SiReact,
+  SiArduino,
+  SiPlatformio,
+  SiMariadb,
+  SiDocker,
+  SiPm2,
+  SiPrisma,
+  SiApachekafka,
+  SiTrpc,
+  SiRedis,
+} from "react-icons/si";
+
+const stackIcons: { [key: string]: JSX.Element } = {
+  NextJS: <SiNextdotjs size={22} />,
+  NodeJS: <SiNodedotjs size={22} />,
+  NestJS: <SiNestjs size={22} />,
+  MQTT: <SiMqtt size={22} />,
+  Tailwind: <SiTailwindcss size={22} />,
+  MySQL: <SiMysql size={22} />,
+  React: <SiReact size={22} />,
+  Arduino: <SiArduino size={22} />,
+  Platfromio: <SiPlatformio size={22} />,
+  MariaDB: <SiMariadb size={22} />,
+  Docker: <SiDocker size={22} />,
+  PM2: <SiPm2 size={22} />,
+  Prisma: <SiPrisma size={22} />,
+  Kafka: <SiApachekafka size={22} />,
+  Grpc: <SiTrpc size={22} />,
+  Redis: <SiRedis size={22} />,
+};
+
+const projects = [
+  {
+    name: "Charging Management System (Inprogress)",
+    description: "Web dashboard for managing token rewards and reports.",
+    github: "https://github.com/poom-ytthpch/doc-charge",
+    private: false,
+    stacks: [
+      "NextJS",
+      "NestJS",
+      "NodeJS",
+      "MQTT",
+      "Arduino",
+      "Platfromio",
+      "MariaDB",
+      "Docker",
+      "PM2",
+      "Prisma",
+      "Kafka",
+      "Grpc",
+      "Redis",
+    ],
+    images: ["/images/yutthapichai.png", "/images/yutthapichai.png"],
+  },
+  {
+    name: "IoT Water Controller",
+    description: "ESP32 + MQTT + Web control for irrigation and sensors.",
+    github: "",
+    private: true,
+    stacks: [
+      "NextJS",
+      "NestJS",
+      "NodeJS",
+      "MQTT",
+      "Arduino",
+      "Platfromio",
+      "MariaDB",
+      "Docker",
+      "PM2",
+      "Prisma",
+    ],
+    images: [
+      "/images/matchchemical/01.png",
+      "/images/matchchemical/02.png",
+      "/images/matchchemical/03.png",
+      "/images/matchchemical/04.png",
+      "/images/matchchemical/05.png",
+    ],
+  },
+  {
+    name: "Book Library",
+    description: "Next.js landing page with CMS and animations.",
+    github: "https://github.com/poom-ytthpch/book-library",
+    private: false,
+    stacks: ["NextJS", "NestJS"],
+    images: ["/images/yutthapichai.png"],
+  },
+];
+
+export default function MyProjects() {
+  const [activeImage, setActiveImage] = useState<string | null>(null);
+
+  return (
+    <section className="w-full py-16 px-6">
+      <h2 className="text-3xl font-bold mb-10 text-center">MY PROJECTS</h2>
+
+      <div className="flex flex-col gap-12">
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+            className="rounded-3xl p-6 shadow-lg h-full bg-white/80 dark:bg-black/40 backdrop-blur-sm"
+          >
+            <div className="mb-3">
+              <h3 className="text-2xl font-semibold text-[light-dark(var(--white-accent),var(--dark-accent))]">
+                {project.name}
+              </h3>
+              <p className="text-sm mt-1 text-[light-dark(var(--white-accent-secondary),var(--dark-accent-secondary))]">
+                {project.description}
+              </p>
+
+              {project.private ? (
+                <div className="flex items-center mt-2 text-[light-dark(var(--white-accent),var(--dark-accent))]">
+                  <Lock size={16} className="mr-1" /> Private Project
+                </div>
+              ) : (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  className="flex items-center mt-2 text-blue-500 hover:underline"
+                >
+                  <FaGithub size={16} className="mr-1" /> View on GitHub
+                </a>
+              )}
+            </div>
+
+            <div className="flex gap-3 mb-4 flex-wrap">
+              {project.stacks.map((stack, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{ scale: 1.1 }}
+                  className="p-2 bg-gray-200 dark:bg-gray-700 rounded-lg shadow-sm"
+                >
+                  {stackIcons[stack]}
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="flex overflow-x-auto gap-4 scrollbar-hide scroll-smooth p-2">
+              {project.images.map((img, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.03 }}
+                  onClick={() => setActiveImage(img)}
+                  className="relative shrink-0 w-[300px] h-[200px] rounded-xl overflow-hidden shadow-md cursor-pointer"
+                >
+                  <Image
+                    src={img}
+                    alt={`${project.name} ${i + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {activeImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50"
+          onClick={() => setActiveImage(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl w-full p-4"
+          >
+            <Image
+              src={activeImage}
+              alt="preview"
+              width={1200}
+              height={800}
+              className="rounded-xl object-contain w-full"
+              onClick={() => setActiveImage(null)}
+            />
+
+            <button
+              onClick={() => setActiveImage(null)}
+              className="absolute top-2 right-2 bg-white text-black px-3 py-1 rounded-lg shadow"
+            >
+              ✕ Close
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
+    </section>
+  );
+}

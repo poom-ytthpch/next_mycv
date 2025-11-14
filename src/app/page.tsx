@@ -1,12 +1,17 @@
 "use client";
+import dynamic from "next/dynamic";
 import MenuBar from "@/components/menu-bar";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import { Poppins } from "next/font/google";
-import { motion, useMotionValue, useTransform } from "framer-motion";
 import { LettersPullUp } from "@/components/words/letter-pull-up";
 import { WordsPullUp } from "@/components/words/word-pull-up";
+import MyProjects from "@/components/Projects";
+import { FaGithub } from "react-icons/fa";
+import { IoIosCloudDownload } from "react-icons/io";
+
+const Skills = dynamic(() => import("@/components/Skills"));
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -17,6 +22,8 @@ const poppins = Poppins({
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const projectRef = useRef<HTMLDivElement | null>(null);
+  const skillRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -29,21 +36,30 @@ export default function Home() {
     return theme === "dark" ? "light" : "dark";
   };
 
+  const scrollToSection = (ref: RefObject<HTMLDivElement | null>) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="@container">
       <div
-        className={`bg-[light-dark(var(--white-background),var(--dark-background))] h-screen p-4 text-[light-dark(var(--white-text),var(--dark-text))] ${poppins.className} `}
+        className={`bg-[light-dark(var(--white-background),var(--dark-background))] p-4 text-[light-dark(var(--white-text),var(--dark-text))] ${poppins.className} `}
       >
-        <MenuBar handleSetTheme={handleSetTheme} theme={String(theme)} />
+        <MenuBar
+          handleSetTheme={handleSetTheme}
+          onScrollToSkill={() => scrollToSection(skillRef)}
+          onScrollToProject={() => scrollToSection(projectRef)}
+          theme={String(theme)}
+        />
 
-        <div className="flex items-center justify-center flex-col lg:flex-row lg:justify-evenly p-4">
+        <div className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4 mt-10 lg:mt-28">
           <div className="">
             <Image
               src="/images/yutthapichai.png"
               alt="Picture of the author"
               width={300}
               height={300}
-              className=" bg-linear-to-t from-[light-dark(var(--white-accent),var(--dark-accent))] to-[light-dark(var(--white-background),var(--dark-background))] rounded-4xl to-50%"
+              className=" bg-linear-to-t from-[light-dark(var(--white-accent),var(--dark-accent))] to-[light-dark(var(--white-background),var(--dark-background))] rounded-4xl to-50% lg:mr-10"
             />
           </div>
 
@@ -61,7 +77,39 @@ export default function Home() {
                 className="lg:text-3xl md:text-2xl text-sm"
               />
             </div>
+
+            <div className="mt-4 flex w-full justify-around">
+              <a
+                href="/Yutthapichai-cv.pdf"
+                target="_blank"
+                className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+              >
+                <IoIosCloudDownload size={16} className="mr-2" />
+                Download My CV
+              </a>
+              <a
+                href={"https://github.com/poom-ytthpch"}
+                target="_blank"
+                className="flex items-center mt-2 text-blue-500 hover:underline"
+              >
+                <FaGithub size={16} className="mr-1" /> View my GitHub
+              </a>
+            </div>
           </div>
+        </div>
+
+        <div
+          ref={skillRef}
+          className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4 mt-4"
+        >
+          <Skills />
+        </div>
+
+        <div
+          ref={projectRef}
+          className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4"
+        >
+          <MyProjects />
         </div>
       </div>
     </div>
