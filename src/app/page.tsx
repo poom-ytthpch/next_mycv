@@ -10,6 +10,7 @@ import { WordsPullUp } from "@/components/words/word-pull-up";
 import MyProjects from "@/components/Projects";
 import { FaGithub } from "react-icons/fa";
 import { IoIosCloudDownload } from "react-icons/io";
+import { getDefaultTheme } from "@/utils/get-default-theme";
 
 const Skills = dynamic(() => import("@/components/Skills"));
 
@@ -26,6 +27,7 @@ export default function Home() {
   const skillRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    setTheme(getDefaultTheme());
     setMounted(true);
   }, []);
 
