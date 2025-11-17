@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { Lock } from "lucide-react";
-import { JSX, useState } from "react";
+import { JSX, useRef, useState } from "react";
 import {
   SiNextdotjs,
   SiNodedotjs,
@@ -123,9 +123,22 @@ const projects = [
 export default function MyProjects() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "-20% 0px -20% 0px" });
+
   return (
     <section className="w-full py-16 px-6">
-      <h2 className="text-3xl font-bold mb-10 text-center">MY PROJECTS</h2>
+      <h2 className="text-3xl font-bold mb-10 text-center">
+        <motion.h1
+          className="text-4xl font-bold mb-10"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ amount: 0.3 }}
+          transition={{ duration: 0.5 }}
+        >
+          MY PROJECTS
+        </motion.h1>
+      </h2>
 
       <div className="flex flex-col gap-12">
         {projects.map((project, index) => (
@@ -134,7 +147,7 @@ export default function MyProjects() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
-            viewport={{ once: true }}
+            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
             className="rounded-3xl p-6 shadow-lg h-full bg-white/80 dark:bg-black/40 backdrop-blur-sm"
           >
             <div className="mb-3">

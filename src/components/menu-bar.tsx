@@ -5,12 +5,14 @@ type Props = {
   theme: string;
   onScrollToSkill: () => void;
   onScrollToProject: () => void;
+  onScrollToContact: () => void;
 };
 const MenuBar = ({
   handleSetTheme,
   theme,
   onScrollToSkill,
   onScrollToProject,
+  onScrollToContact,
 }: Props) => {
   const menu = [
     {
@@ -23,6 +25,7 @@ const MenuBar = ({
     },
     {
       name: "CONTACT",
+      click: onScrollToContact,
     },
   ];
 

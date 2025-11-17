@@ -1,17 +1,18 @@
-"use client"
-import { cn } from '@/lib/utils';
-import { motion, useInView } from 'framer-motion';
-import * as React from 'react';
- 
+"use client";
+import { cn } from "@/lib/utils";
+import { motion, useInView } from "framer-motion";
+import * as React from "react";
+import { useRef } from "react";
+
 export function WordsPullUp({
   text,
-  className = '',
+  className = "",
 }: {
   text: string;
   className?: string;
 }) {
-  const splittedText = text.split(' ');
- 
+  const splittedText = text.split(" ");
+
   const pullupVariant = {
     initial: { y: 20, opacity: 0 },
     animate: (i: number) => ({
@@ -22,8 +23,8 @@ export function WordsPullUp({
       },
     }),
   };
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "-20% 0px -20% 0px" });
   return (
     <div className="flex ">
       {splittedText.map((current, i) => (
@@ -32,15 +33,15 @@ export function WordsPullUp({
           ref={ref}
           variants={pullupVariant}
           initial="initial"
-          animate={isInView ? 'animate' : ''}
+          animate={inView ? "animate" : { opacity: 0, x: -20 }}
           custom={i}
           className={cn(
-            'text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem]',
-            'pr-2', // class to sperate words
+            "text-xl text-center sm:text-4xl font-bold tracking-tighter md:text-6xl md:leading-[4rem]",
+            "pr-2",
             className
           )}
         >
-          {current == '' ? <span>&nbsp;</span> : current}
+          {current == "" ? <span>&nbsp;</span> : current}
         </motion.div>
       ))}
     </div>

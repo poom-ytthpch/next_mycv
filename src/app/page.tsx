@@ -11,6 +11,7 @@ import MyProjects from "@/components/Projects";
 import { FaGithub } from "react-icons/fa";
 import { IoIosCloudDownload } from "react-icons/io";
 import { getDefaultTheme } from "@/utils/get-default-theme";
+import Contact from "@/components/Contact";
 
 const Skills = dynamic(() => import("@/components/Skills"));
 
@@ -25,6 +26,7 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
   const projectRef = useRef<HTMLDivElement | null>(null);
   const skillRef = useRef<HTMLDivElement | null>(null);
+  const contact = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setTheme(getDefaultTheme());
@@ -53,6 +55,7 @@ export default function Home() {
           handleSetTheme={handleSetTheme}
           onScrollToSkill={() => scrollToSection(skillRef)}
           onScrollToProject={() => scrollToSection(projectRef)}
+          onScrollToContact={() => scrollToSection(contact)}
           theme={String(theme)}
         />
 
@@ -86,17 +89,18 @@ export default function Home() {
               <a
                 href="/YutthapichaiCV.pdf"
                 target="_blank"
-                className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition"
+                className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition md:text-sm mr-2"
               >
-                <IoIosCloudDownload size={16} className="mr-2" />
-                Download My CV
+                <IoIosCloudDownload className="mr-2 text-sm md:text-2xl" />
+                <div className="text-sm md:text-2xl">Download My CV</div>
               </a>
               <a
                 href={"https://github.com/poom-ytthpch"}
                 target="_blank"
-                className="flex items-center mt-2 text-blue-500 hover:underline"
+                className="flex items-center  text-blue-500 hover:underline"
               >
-                <FaGithub size={16} className="mr-1" /> View my GitHub
+                <FaGithub className="mr-1 md:text-2xl" />
+                <div className="text-sm md:text-2xl">View my GitHub</div>
               </a>
             </div>
           </div>
@@ -111,9 +115,15 @@ export default function Home() {
 
         <div
           ref={projectRef}
-          className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4"
+          className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4 w-full"
         >
           <MyProjects />
+        </div>
+        <div
+          ref={contact}
+          className="flex items-center justify-center flex-col lg:flex-row lg:justify-center p-4 w-full"
+        >
+          <Contact />
         </div>
       </div>
     </div>
