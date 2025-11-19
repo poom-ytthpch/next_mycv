@@ -71,7 +71,7 @@ export default function Contact() {
             />
           </a>
 
-          <a href="#" target="_blank">
+          <a href="https://line.me/ti/p/TBDDcThpqb" target="_blank">
             <FaLine
               size={28}
               className="hover:text-green-500 hover:scale-125 transition"
