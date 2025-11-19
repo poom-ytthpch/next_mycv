@@ -71,7 +71,15 @@ const projects = [
       "Grpc",
       "Redis",
     ],
-    images: ["/images/no-image.png"],
+    images: [
+      "/images/doccharge/01.png",
+      "/images/doccharge/02.png",
+      "/images/doccharge/03.png",
+      "/images/doccharge/04.png",
+      "/images/doccharge/05.png",
+      "/images/doccharge/06.png",
+      "/images/doccharge/07.png",
+    ],
   },
   {
     name: "IoT Water Controller",
