@@ -1,57 +1,28 @@
 "use client";
+import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { Moon, Sun } from "lucide-react";
 
-type Props = {
-  handleSetTheme: () => string;
-  theme: string;
-  onScrollToSkill: () => void;
-  onScrollToProject: () => void;
-  onScrollToContact: () => void;
-};
-const MenuBar = ({
-  handleSetTheme,
-  theme,
-  onScrollToSkill,
-  onScrollToProject,
-  onScrollToContact,
-}: Props) => {
-  const menu = [
-    {
-      name: "SKILLS",
-      click: onScrollToSkill,
-    },
-    {
-      name: "PROJECTS",
-      click: onScrollToProject,
-    },
-    {
-      name: "CONTACT",
-      click: onScrollToContact,
-    },
-  ];
-
+export default function MenuBar() {
+  const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const dark = mounted && resolvedTheme === "dark";
   return (
-    <div className="flex justify-center ">
-      <div className="flex md:flex-row flex-col w-full md:w-auto mb-2 md:mb-0 items-center justify-around border-3 border-gray-300 dark:border-gray-600 p-2 rounded-2xl ">
-        {menu.map((item, index) => (
-          <button
-            key={index}
-            onClick={item.click}
-            disabled={!item.click}
-            className="cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 px-6 py-2 rounded-full font-semibold mr-2"
-          >
-            {item.name}
+    <header className="site-header">
+      <div className="site-shell nav-inner">
+        <a href="#about" className="wordmark" aria-label="Yutthapichai home">
+          <span className="wordmark-symbol">YC</span><span className="wordmark-name">Yutthapichai<span>.</span></span>
+        </a>
+        <nav className="nav-links" aria-label="Main navigation">
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <button type="button" className="theme-toggle" onClick={() => setTheme(dark ? "light" : "dark")} aria-label={dark ? "Switch to light theme" : "Switch to dark theme"} title={dark ? "Light theme" : "Dark theme"} disabled={!mounted}>
+            {dark ? <Sun size={19} aria-hidden="true" /> : <Moon size={19} aria-hidden="true" />}
           </button>
-        ))}
-
-        <button
-          className="p-2 w-10 bg-gray-200 dark:bg-gray-700  rounded-full cursor-pointer"
-          onClick={() => handleSetTheme()}
-        >
-          {theme === "dark" ? "🌙" : "☀️"}
-        </button>
+        </nav>
       </div>
-    </div>
+    </header>
   );
-};
-
-export default MenuBar;
+}

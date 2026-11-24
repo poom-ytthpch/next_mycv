@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { JSX, useRef } from "react";
+import { JSX } from "react";
 import { DiVisualstudio } from "react-icons/di";
 import { Code2 } from "lucide-react";
 import {
@@ -56,63 +55,23 @@ const SkillSection = ({
   title: string;
   skills: SkillType[];
 }) => {
-  const refTitle = useRef(null);
-  const refGrid = useRef(null);
-
-  const inViewTitle = useInView(refTitle, { margin: "-10% 0px -10% 0px" });
-  const inViewGrid = useInView(refGrid, { margin: "-10% 0px -10% 0px" });
-
   return (
-    <section className="w-full max-w-5xl mt-10">
-      <motion.h2
-        ref={refTitle}
-        className="text-2xl font-semibold mb-4 text-[light-dark(var(--white-accent),var(--dark-accent))]"
-        initial={{ opacity: 0, x: -20 }}
-        animate={inViewTitle ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-        transition={{ duration: 0.4 }}
-      >
-        {title}
-      </motion.h2>
-
-      <motion.div
-        ref={refGrid}
-        className="flex flex-wrap gap-6"
-        variants={{
-          visible: {
-            transition: { staggerChildren: 0.05 },
-          },
-        }}
-        initial="hidden"
-        animate={inViewGrid ? "visible" : "hidden"}
-      >
-        {skills.map((skill, index) => (
-          <motion.div
-            key={index}
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.3 }}
-            whileHover={{
-              scale: 1.15,
-              y: -5,
-              transition: { type: "spring", stiffness: 300 },
-            }}
-            className="flex flex-col items-center justify-center p-3 rounded-2xl shadow-md hover:shadow-lg bg-white/80 backdrop-blur-sm"
-          >
-            {skill.icon}
-            <span className="mt-2 text-sm font-medium text-gray-700">
-              {skill.name}
-            </span>
-          </motion.div>
+    <section className="skill-group">
+      <h3>{title}</h3>
+      <ul className="skill-list">
+        {skills.map((skill) => (
+          <li key={skill.name} className="skill-chip">
+            <span className="skill-icon" aria-hidden="true">{skill.icon}</span>
+            <span>{skill.name}</span>
+          </li>
         ))}
-      </motion.div>
+      </ul>
     </section>
   );
 };
 
 export default function Skills() {
-  const size = 50;
+  const size = 18;
 
   const sections = [
     {
@@ -242,24 +201,16 @@ export default function Skills() {
   ];
 
   return (
-    <div className="flex flex-col items-center py-20  w-full h-full">
-      <motion.h1
-        className="text-4xl font-bold mb-10"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ amount: 0.3 }}
-        transition={{ duration: 0.5 }}
-      >
-        MY SKILLS
-      </motion.h1>
-
-      {sections.map((section, index) => (
-        <SkillSection
-          key={index}
-          title={section.title}
-          skills={section.skills}
-        />
-      ))}
-    </div>
+    <section id="skills" className="portfolio-section">
+      <div className="section-heading">
+        <div><p className="eyebrow">02 / TOOLKIT</p><h2>Technical skills.</h2></div>
+        <p>Tools and technologies across the full software lifecycle.</p>
+      </div>
+      <div className="skills-grid">
+        {sections.map((section) => (
+          <SkillSection key={section.title} title={section.title} skills={section.skills} />
+        ))}
+      </div>
+    </section>
   );
 }

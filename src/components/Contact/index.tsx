@@ -1,84 +1,39 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { IoMail, IoCall, IoLocation } from "react-icons/io5";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { FaGithub, FaLinkedin, FaLine } from "react-icons/fa";
 
+const socials = [
+  { name: "GitHub", href: "https://github.com/poom-ytthpch", icon: FaGithub },
+  { name: "LinkedIn", href: "https://linkedin.com/in/poom-ytthpch", icon: FaLinkedin },
+  { name: "LINE", href: "https://line.me/ti/p/TBDDcThpqb", icon: FaLine },
+];
+
 export default function Contact() {
-  const refHeader = useRef(null);
-  const refCard = useRef(null);
-
-  const headerInView = useInView(refHeader, { margin: "-10% 0px -10% 0px" });
-  const cardInView = useInView(refCard, { margin: "-10% 0px -10% 0px" });
-
   return (
-    <div className="w-full py-20 px-6 flex flex-col items-center">
-      <motion.h2
-        ref={refHeader}
-        initial={{ opacity: 0, y: 20 }}
-        animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.45 }}
-        className="text-4xl font-bold text-center mb-10 text-[light-dark(var(--white-text),var(--dark-text))]"
-      >
-        CONTACT
-      </motion.h2>
-
-      <motion.div
-        ref={refCard}
-        initial={{ opacity: 0, y: 40 }}
-        animate={cardInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-        transition={{ duration: 0.45 }}
-        className="w-full max-w-xl p-8 rounded-3xl shadow-xl bg-white/40 dark:bg-black/30 backdrop-blur-xl border border-white/20 dark:border-white/5 flex flex-col gap-6"
-      >
-        <div className="flex items-center gap-4">
-          <div className="p-3 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-md shadow flex items-center justify-center">
-            <IoMail className="md:text-2xl" />
-          </div>
-          <span className="md:text-lg font-medium break-all">
-            ch.yutthapichai@gmail.com
-          </span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div className="p-3 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-md shadow flex items-center justify-center">
-            <IoCall className="md:text-2xl" />
-          </div>
-          <span className="md:text-lg  font-medium">+66 80-208-4855</span>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <div className="p-3 rounded-2xl bg-white/70 dark:bg-white/10 backdrop-blur-md shadow flex items-center justify-center">
-            <IoLocation className="md:text-2xl" />
-          </div>
-          <span className="md:text-lg  font-medium">
-            1198/562 Origin Play Sri Udom Station Bangkok, Thailand
-          </span>
-        </div>
-
-        <div className="flex gap-5 mt-4 justify-center">
-          <a href="https://github.com/poom-ytthpch" target="_blank">
-            <FaGithub
-              size={28}
-              className="hover:scale-125 transition-transform duration-200"
-            />
+    <section id="contact" className="portfolio-section contact-section">
+      <div className="section-heading">
+        <div><p className="eyebrow">03 / GET IN TOUCH</p><h2>Let’s connect.</h2></div>
+        <p>For software engineering opportunities and project discussions.</p>
+      </div>
+      <div className="contact-panel">
+        <div className="contact-details">
+          <a href="mailto:ch.yutthapichai@gmail.com" className="contact-row">
+            <span className="contact-icon"><Mail size={21} aria-hidden="true" /></span>
+            <span><span className="contact-label">EMAIL</span><strong>ch.yutthapichai@gmail.com</strong></span>
           </a>
-
-          <a href="https://linkedin.com/in/poom-ytthpch" target="_blank">
-            <FaLinkedin
-              size={28}
-              className="hover:text-blue-600 hover:scale-125 transition"
-            />
+          <a href="tel:+66802084855" className="contact-row">
+            <span className="contact-icon"><Phone size={21} aria-hidden="true" /></span>
+            <span><span className="contact-label">PHONE</span><strong>+66 80-208-4855</strong></span>
           </a>
-
-          <a href="https://line.me/ti/p/TBDDcThpqb" target="_blank">
-            <FaLine
-              size={28}
-              className="hover:text-green-500 hover:scale-125 transition"
-            />
-          </a>
+          <div className="contact-row">
+            <span className="contact-icon"><MapPin size={21} aria-hidden="true" /></span>
+            <span><span className="contact-label">LOCATION</span><strong>1198/562 Origin Play Sri Udom Station Bangkok, Thailand</strong></span>
+          </div>
         </div>
-      </motion.div>
-    </div>
+        <div className="contact-socials">
+          <p className="eyebrow">FIND ME ONLINE</p>
+          {socials.map(({name, href, icon: Icon}) => <a key={name} href={href} target="_blank" rel="noopener noreferrer" className="social-row"><Icon size={20} aria-hidden="true" /><span>{name}</span><ArrowUpRight size={17} aria-hidden="true" /></a>)}
+        </div>
+      </div>
+    </section>
   );
 }
