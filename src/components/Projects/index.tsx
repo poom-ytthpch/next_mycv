@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
-import { Lock } from "lucide-react";
+import { ExternalLink, Lock } from "lucide-react";
 import { JSX, useState } from "react";
 import {
   SiNextdotjs,
@@ -87,6 +87,10 @@ const projects = [
     description: "End-to-end industrial IoT platform supporting up to 12 sensors and 24 channels, real-time telemetry and remote control. Developed ESP32-S3 touchscreen firmware, Modbus RTU, configurable relay automation, Normal/Recovery OTA, offline telemetry buffering and crash diagnostics, alongside NestJS APIs, a Next.js dashboard and Kubernetes CI/CD.",
     github: "",
     private: true,
+    links: [
+      { label: "Match Chemical Website", href: "https://matchchemical.co" },
+      { label: "SWS Platform", href: "https://sws.matchchemical.co" },
+    ],
     stacks: ["NextJS", "NestJS", "NodeJS", "MQTT", "ESP32-S3", "ESP-IDF", "LVGL", "Modbus RTU", "FreeRTOS", "MariaDB", "Docker", "Prisma", "Nginx", "AntD", "Kubernetes", "GitHub Actions"],
     images: [
       "/images/matchchemical/01.png",
@@ -204,6 +208,22 @@ export default function MyProjects() {
                   <FaGithub size={16} className="mr-1" /> View on GitHub
                 </a>
               )}
+              {project.links?.length ? (
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-500 hover:underline"
+                    >
+                      <ExternalLink size={16} />
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              ) : null}
             </div>
 
             <div className="flex gap-3 mb-4 flex-wrap">
