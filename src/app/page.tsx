@@ -80,27 +80,43 @@ export default function Home() {
             </div>
             <div className="mt-4">
               <LettersPullUp
-                text="I'm a Full Stack Developer"
+                text="Full-Stack Software Engineer"
                 className="lg:text-3xl md:text-2xl text-sm"
               />
             </div>
 
-            <div className="mt-4 flex w-full justify-around">
+            <p className="mt-4 max-w-xl text-sm leading-relaxed md:text-base">
+              5+ years of experience building enterprise applications, backend
+              microservices, event-driven data integrations and industrial IoT
+              platforms. Focused on reliable production systems, scalable APIs
+              and cloud-native delivery.
+            </p>
+            <div className="mt-4 flex w-full flex-wrap items-center gap-3">
               <a
                 href="/YutthapichaiCV.pdf"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center px-4 py-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition md:text-sm mr-2"
               >
                 <IoIosCloudDownload className="mr-2 text-sm md:text-2xl" />
-                <div className="text-sm md:text-2xl">Download My CV</div>
+                <div className="text-sm">Download Resume</div>
+              </a>
+              <a
+                href="/Yutthapichai-Cover-Letter.pdf"
+                download
+                className="flex items-center px-4 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500/10 transition"
+              >
+                <IoIosCloudDownload className="mr-2 text-xl" />
+                <span className="text-sm">Cover Letter</span>
               </a>
               <a
                 href={"https://github.com/poom-ytthpch"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center  text-blue-500 hover:underline"
               >
                 <FaGithub className="mr-1 md:text-2xl" />
-                <div className="text-sm md:text-2xl">View my GitHub</div>
+                <div className="text-sm">View my GitHub</div>
               </a>
             </div>
           </div>

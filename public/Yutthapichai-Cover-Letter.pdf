@@ -1,0 +1,74 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+6 0 obj
+<< /Length 2991 >>
+stream
+0.12 0.19 0.29 rg
+BT /F2 21 Tf 58 775 Td (YUTTHAPICHAI CHAIWONG) Tj ET
+BT /F2 10 Tf 58 754 Td (FULL-STACK DEVELOPER / SOFTWARE ENGINEER) Tj ET
+BT /F1 10 Tf 58 734 Td (ch.yutthapichai@gmail.com  |  080-208-4855  |  Bangkok, Thailand) Tj ET
+BT /F1 10 Tf 58 719 Td (github.com/poom-ytthpch) Tj ET
+0.20 0.36 0.53 RG 0.8 w 58 704 m 537 704 l S
+0.12 0.19 0.29 rg
+BT /F2 11 Tf 58 680 Td (APPLICATION FOR SOFTWARE ENGINEERING OPPORTUNITIES) Tj ET
+BT /F1 11 Tf 58 655 Td (Dear Hiring Team,) Tj ET
+BT /F1 11 Tf 58 630 Td (I am writing to express my interest in software engineering opportunities,) Tj ET
+BT /F1 11 Tf 58 615 Td (including full-stack and backend development roles. I bring over five years of) Tj ET
+BT /F1 11 Tf 58 600 Td (experience developing enterprise applications, microservices, data integration) Tj ET
+BT /F1 11 Tf 58 585 Td (pipelines and industrial IoT platforms.) Tj ET
+BT /F1 11 Tf 58 558 Td (My core expertise includes TypeScript, JavaScript, Node.js, NestJS, Python, React) Tj ET
+BT /F1 11 Tf 58 543 Td (and Next.js, along with REST APIs, GraphQL, gRPC, database design and) Tj ET
+BT /F1 11 Tf 58 528 Td (event-driven architecture. I have worked with relational and NoSQL databases,) Tj ET
+BT /F1 11 Tf 58 513 Td (Kafka, RabbitMQ, MQTT and Azure Service Bus, as well as Docker, Kubernetes, Azure) Tj ET
+BT /F1 11 Tf 58 498 Td (and CI/CD workflows.) Tj ET
+BT /F1 11 Tf 58 471 Td (In retail data integration, I developed and maintained NestJS and Python services) Tj ET
+BT /F1 11 Tf 58 456 Td (for inventory, sales and promotions, including ETL, batch processing, data) Tj ET
+BT /F1 11 Tf 58 441 Td (reconciliation and asynchronous integrations. My experience also includes) Tj ET
+BT /F1 11 Tf 58 426 Td (insurance claim processing, digital asset platforms and import-export management) Tj ET
+BT /F1 11 Tf 58 411 Td (systems.) Tj ET
+BT /F1 11 Tf 58 384 Td (I have also developed an end-to-end industrial IoT platform, integrating ESP32-S3) Tj ET
+BT /F1 11 Tf 58 369 Td (firmware, MQTT, Modbus RTU, real-time dashboards, configurable automation and OTA) Tj ET
+BT /F1 11 Tf 58 354 Td (firmware management. These projects have strengthened my ability to solve complex) Tj ET
+BT /F1 11 Tf 58 339 Td (integration and reliability challenges across the full software lifecycle.) Tj ET
+BT /F1 11 Tf 58 312 Td (I value maintainable architecture, software quality, collaborative development) Tj ET
+BT /F1 11 Tf 58 297 Td (and practical problem-solving. I would welcome the opportunity to contribute my) Tj ET
+BT /F1 11 Tf 58 282 Td (technical experience to your engineering team and help deliver reliable, scalable) Tj ET
+BT /F1 11 Tf 58 267 Td (solutions that meet business needs.) Tj ET
+BT /F1 11 Tf 58 240 Td (Thank you for your consideration. I look forward to the opportunity to discuss) Tj ET
+BT /F1 11 Tf 58 225 Td (how my experience and skills could contribute to your team.) Tj ET
+BT /F1 11 Tf 58 198 Td (Sincerely,) Tj ET
+BT /F2 11 Tf 58 178 Td (Yutthapichai Chaiwong) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Title (Cover Letter - Yutthapichai Chaiwong) /Author (Yutthapichai Chaiwong) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000000321 00000 n 
+0000000396 00000 n 
+0000003438 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R /Info 7 0 R >>
+startxref
+3537
+%%EOF
