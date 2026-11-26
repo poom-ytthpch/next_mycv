@@ -184,7 +184,7 @@ export default function Skills() {
       skills: [
         { name: "Prefect", icon: <SiPrefect color="#024DFD" size={size} /> },
         { name: "Kubernetes / AKS", icon: <SiKubernetes color="#326CE5" size={size} /> },
-        ...["ETL / ELT", "Batch Processing", "Data Reconciliation", "Real-Time Processing", "Microsoft Azure", "Azure Blob Storage", "Tencent Cloud", "CI/CD"].map((name) => ({ name, icon: <Code2 size={size} /> })),
+        ...["ETL / ELT", "Batch Processing", "Data Reconciliation", "Real-Time Processing", "Microsoft Azure", "Azure Blob Storage", "Tencent Cloud", "CI/CD", "Argo CD / GitOps", "kubectl", "UAT / PRD Deployment", "Rollout Verification", "Vercel", "MinIO"].map((name) => ({ name, icon: <Code2 size={size} /> })),
       ],
     },
     {

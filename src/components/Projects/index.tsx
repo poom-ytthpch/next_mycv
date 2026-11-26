@@ -51,10 +51,10 @@ const stackIcons: { [key: string]: JSX.Element } = {
 const projects = [
   {
     name: "RIS / DaaS — Retail Integration & Data Platform",
-    description: "Enterprise inventory, sales and promotion microservices built with NestJS and Python. Developed ETL and batch workflows, real-time synchronization, event-driven integrations, reconciliation and message replay. Supported UAT and production on Azure Kubernetes Service.",
+    description: "Enterprise inventory, sales and promotion microservices built with NestJS and Python. Developed ETL and batch workflows, real-time synchronization, event-driven integrations, reconciliation and message replay. Deployed and supported UAT and Production (PRD) on Azure Kubernetes Service (AKS), including Kubernetes rollouts, pod and CronJob health checks, log monitoring and release verification.",
     github: "",
     private: true,
-    stacks: ["NestJS", "Python", "Kafka", "RabbitMQ", "Azure Service Bus", "Prefect", "Azure Blob Storage", "AKS", "Tencent Cloud"],
+    stacks: ["NestJS", "Python", "Kafka", "RabbitMQ", "Azure Service Bus", "Prefect", "Azure Blob Storage", "AKS", "Kubernetes", "kubectl", "Tencent Cloud"],
     images: [],
   },
   {
@@ -83,14 +83,14 @@ const projects = [
   },
   {
     name: "SWS / Match Chemical — Industrial Water Monitoring & Control",
-    description: "End-to-end industrial IoT platform supporting up to 12 sensors and 24 channels, real-time telemetry and remote control. Developed ESP32-S3 touchscreen firmware, Modbus RTU, configurable relay automation, Normal/Recovery OTA, offline telemetry buffering and crash diagnostics, alongside NestJS APIs, a Next.js dashboard and Kubernetes CI/CD.",
+    description: "End-to-end industrial IoT platform supporting up to 12 sensors and 24 channels, real-time telemetry and remote control. Developed ESP32-S3 touchscreen firmware, Modbus RTU, configurable relay automation, Normal/Recovery OTA, offline telemetry buffering and crash diagnostics, alongside NestJS APIs and a Next.js dashboard. Managed UAT and Production (PRD) deployments through Kubernetes, GitHub Actions and GitOps, with Vercel frontend releases and MinIO-based OTA firmware distribution.",
     github: "",
     private: true,
     links: [
       { label: "Match Chemical Website", href: "https://matchchemical.co" },
       { label: "SWS Platform", href: "https://sws.matchchemical.co" },
     ],
-    stacks: ["NextJS", "NestJS", "NodeJS", "MQTT", "ESP32-S3", "ESP-IDF", "LVGL", "Modbus RTU", "FreeRTOS", "MariaDB", "Docker", "Prisma", "Nginx", "AntD", "Kubernetes", "GitHub Actions"],
+    stacks: ["NextJS", "NestJS", "NodeJS", "MQTT", "ESP32-S3", "ESP-IDF", "LVGL", "Modbus RTU", "FreeRTOS", "MariaDB", "Docker", "Prisma", "Nginx", "AntD", "Kubernetes", "GitHub Actions", "Argo CD", "Vercel", "MinIO"],
     images: [
       "/images/matchchemical/01.png",
       "/images/matchchemical/02.png",

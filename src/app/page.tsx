@@ -21,7 +21,7 @@ export default function Home() {
               5+ years of experience building enterprise applications, backend
               microservices, event-driven data integrations and industrial IoT
               platforms. Focused on reliable production systems, scalable APIs
-              and cloud-native delivery.
+              and cloud-native deployments across UAT and Production (PRD).
             </p>
             <div className="hero-actions">
               <a href="/YutthapichaiCV.pdf" download className="action action-primary">

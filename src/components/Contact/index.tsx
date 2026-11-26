@@ -26,7 +26,7 @@ export default function Contact() {
           </a>
           <div className="contact-row">
             <span className="contact-icon"><MapPin size={21} aria-hidden="true" /></span>
-            <span><span className="contact-label">LOCATION</span><strong>1198/562 Origin Play Sri Udom Station Bangkok, Thailand</strong></span>
+            <span><span className="contact-label">LOCATION</span><strong>Sukhumvit 103, Bangna, Bangkok, Thailand</strong></span>
           </div>
         </div>
         <div className="contact-socials">
